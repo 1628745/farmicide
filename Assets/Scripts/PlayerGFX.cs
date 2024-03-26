@@ -45,7 +45,7 @@ public class PlayerGFX : MonoBehaviour
         }
 
         _visibility = Mathf.Lerp(_visibility, _desiredVisibility, Time.deltaTime*visibilitySpring);
-        ui.transform.localScale = _visibility * (new Vector3(1, 1, 1));
+        ui.transform.localScale = _visibility * new Vector3(1, 1, 1);
         
         // detail panel
         interactionHint.text = _player.focus ? _player.focus.hint : "";

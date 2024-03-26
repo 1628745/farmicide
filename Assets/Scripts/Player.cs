@@ -1,15 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Diagnostics;
 
 public class Player : MonoBehaviour
 {
     public float maxHealth = 100f;
-    
+
     public Color color;
     public int money;
     public GameObject bag;
@@ -26,11 +21,12 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     public Vector2 moveDir;
     private Rigidbody2D _rb;
+    private BoxCollider2D _collider;
     private PlayerGFX _playerGFX;
     private GameManager _manager;
     public Target target;
 
-    
+
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -39,6 +35,7 @@ public class Player : MonoBehaviour
         target.owner = this;
         target.health = maxHealth;
         _manager = FindObjectOfType<GameManager>();
+        _collider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -55,8 +52,8 @@ public class Player : MonoBehaviour
 
         if (interactDelayTimer <= 0)
             interactTimer = interactAction.ReadValue<float>() > 0f ? interactTimer + Time.deltaTime : 0f;
-            if (interactTimer == 0f) 
-                UIPopUpBufferTimer = UIPopUpBuffer;
+        if (interactTimer == 0f)
+            UIPopUpBufferTimer = UIPopUpBuffer;
 
 
         if (interactTimer > interactHold)
@@ -65,33 +62,36 @@ public class Player : MonoBehaviour
             OnInteract();
             interactDelayTimer = interactDelay;
         }
-        
-        if(focus) 
-            _playerGFX.DisplayUI();
 
-        if (interactTimer > 0f && UIPopUpBufferTimer <= 0)
+        if (focus)
+        {
             _playerGFX.DisplayUI();
-        else if (interactAction.ReadValue<float>() == 0)
+        }
+
+        else if (interactTimer > 0f && UIPopUpBufferTimer <= 0)
+            _playerGFX.DisplayUI();
+        else if
+            (interactAction.ReadValue<float>() == 0)
             _playerGFX.InteruptUI();
 
 
         interactDelayTimer--;
         UIPopUpBufferTimer--;
-
-
     }
+
 
     void OnInteract()
     {
         if (focus)
         {
             focus.onInteract.Invoke(this);
-        } else if (bag)
+        }
+        else if (bag)
         {
             var obj = Instantiate(bag, transform.position, Quaternion.identity);
             var tobj = obj.GetComponent<Target>();
             if (tobj) tobj.owner = this;
-            
+
             bag = null;
         }
     }
@@ -110,12 +110,13 @@ public class Player : MonoBehaviour
     {
         money += amount;
     }
-    
+
     private void OnEnable()
     {
         interactAction.Enable();
         turnAction.Enable();
     }
+
 
     // private void OnDestroy()
     // {
