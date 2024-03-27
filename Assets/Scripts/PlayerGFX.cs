@@ -17,9 +17,11 @@ public class PlayerGFX : MonoBehaviour
     public float idleTime = 1f;
     public float idleTimer;
     public float visibilitySpring = 2f;
-    private float _desiredVisibility = 0f, _visibility = 0f;
+    private float _desiredVisibility = 0f;
+    public float visibility = 0f;
     private int _currentDirection = 1;
     private Player _player;
+    public float visibleStart;
 
     private Rigidbody2D _rb;
 
@@ -44,8 +46,8 @@ public class PlayerGFX : MonoBehaviour
             _desiredVisibility = 0f;
         }
 
-        _visibility = Mathf.Lerp(_visibility, _desiredVisibility, Time.deltaTime*visibilitySpring);
-        ui.transform.localScale = _visibility * new Vector3(1, 1, 1);
+        visibility = Mathf.Lerp(visibility, _desiredVisibility, Time.deltaTime*visibilitySpring);
+        ui.transform.localScale = visibility * new Vector3(1, 1, 1);
         
         // detail panel
         interactionHint.text = _player.focus ? _player.focus.hint : "";
@@ -60,9 +62,15 @@ public class PlayerGFX : MonoBehaviour
     {
         _desiredVisibility = 1f;
         idleTimer = 0f;
+        visibleStart = Time.time;
     }
     public void InteruptUI()
     {
         _desiredVisibility = 0f;
+    }
+    
+    public float TotalTimeVisible()
+    {
+        return Time.time - visibleStart;
     }
 }

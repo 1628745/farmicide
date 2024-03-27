@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public bool interactIsDisabled = false;
 
     public float moveSpeed = 5f;
+    private float _timeSinceLastDamage = 0f;
     public Vector2 moveDir;
     private Rigidbody2D _rb;
     private BoxCollider2D _collider;
@@ -40,6 +41,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // update time since last damage
+        _timeSinceLastDamage += Time.deltaTime;
+        
         // basic movement
 
         moveDir = turnAction.ReadValue<Vector2>().normalized;
@@ -67,11 +71,9 @@ public class Player : MonoBehaviour
         {
             _playerGFX.DisplayUI();
         }
-
         else if (interactTimer > 0f && UIPopUpBufferTimer <= 0)
             _playerGFX.DisplayUI();
-        else if
-            (interactAction.ReadValue<float>() == 0)
+        else if (interactAction.ReadValue<float>() == 0 && _playerGFX.visibility >= .9 && _timeSinceLastDamage > 1f)
             _playerGFX.InteruptUI();
 
 
@@ -104,6 +106,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _playerGFX.DisplayUI();
+        _timeSinceLastDamage = 0f;
     }
 
     public void AddMoney(int amount)
