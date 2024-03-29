@@ -5,13 +5,7 @@ using UnityEngine;
 
 public class Marker : MonoBehaviour
 {
-    public Player owner
-    {
-        get
-        {
-            return GetComponent<Target>().owner;
-        }
-    }
+    public Player owner => GetComponent<Target>().owner;
 
     public float radius;
 
@@ -21,12 +15,6 @@ public class Marker : MonoBehaviour
     {
         _territory = FindObjectOfType<Territory>();
         _territory.Mark();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnDestroy()

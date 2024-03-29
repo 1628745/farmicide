@@ -966,6 +966,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7922218990159134430, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
+      propertyPath: idleTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922218990159134430, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
       propertyPath: visibilitySpring
       value: 10
       objectReference: {fileID: 0}
@@ -2513,7 +2517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4650604950607391299, guid: 227ae12148577c04ca85facf40113d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.35
+      value: 13.91
       objectReference: {fileID: 0}
     - target: {fileID: 4650604950607391299, guid: 227ae12148577c04ca85facf40113d1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3677,6 +3681,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1818672612110893920, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
+      propertyPath: bag
+      value: 
+      objectReference: {fileID: 7430608596500326256, guid: 16ff87b6765a437429e88530254cf707, type: 3}
+    - target: {fileID: 1818672612110893920, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
       propertyPath: color.b
       value: 0
       objectReference: {fileID: 0}
@@ -3937,8 +3945,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7922218990159134430, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
+      propertyPath: idleTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922218990159134430, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
       propertyPath: visibilitySpring
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8247280470868924555, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
       propertyPath: m_IsActive
@@ -3959,7 +3971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4650604950607391299, guid: 227ae12148577c04ca85facf40113d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.91
+      value: -13.91
       objectReference: {fileID: 0}
     - target: {fileID: 4650604950607391299, guid: 227ae12148577c04ca85facf40113d1b, type: 3}
       propertyPath: m_LocalPosition.y
