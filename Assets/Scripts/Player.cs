@@ -119,10 +119,4 @@ public class Player : MonoBehaviour
         interactAction.Enable();
         turnAction.Enable();
     }
-
-
-    // private void OnDestroy()
-    // {
-    //     _manager.LoseGame(this);
-    // }
 }

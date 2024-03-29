@@ -68,9 +68,4 @@ public class PlayerGFX : MonoBehaviour
     {
         _desiredVisibility = 0f;
     }
-    
-    public float TotalTimeVisible()
-    {
-        return Time.time - visibleStart;
-    }
 }
