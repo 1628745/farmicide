@@ -11,6 +11,7 @@ public class Turret : MonoBehaviour
     public int tooFar = 10;
     public int segments = 50; // Number of line segments to approximate the circle
     public LineRenderer line;
+    public Material lineMaterial;
     
     private bool _canShoot = true;
     private Target _target;

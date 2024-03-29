@@ -12,17 +12,6 @@ public class Target : MonoBehaviour
 
     public float health;
     public TargetDamageEvent onDamage;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void TakeDamage(float damage)
     {

@@ -339,6 +339,10 @@ MonoBehaviour:
   focus: {fileID: 0}
   interactHold: 0.5
   interactTimer: 0
+  interactDelay: 0
+  interactDelayTimer: 0
+  UIPopUpBuffer: 0
+  UIPopUpBufferTimer: 0
   interactAction:
     m_Name: Interact
     m_Type: 0
@@ -389,6 +393,7 @@ MonoBehaviour:
       m_Action: Turn
       m_Flags: 8
     m_Flags: 0
+  interactIsDisabled: 0
   moveSpeed: 5
   moveDir: {x: 1, y: 0}
   target: {fileID: 0}
@@ -415,6 +420,8 @@ MonoBehaviour:
   idleTime: 1
   idleTimer: 0
   visibilitySpring: 5
+  visibility: 0
+  visibleStart: 0
 --- !u!114 &151856792458281099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818672612434433679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
