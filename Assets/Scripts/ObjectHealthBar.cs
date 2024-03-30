@@ -20,6 +20,8 @@ public class ObjectHealthBar : MonoBehaviour
     {
         target = GetComponentInParent<Target>();
         healthSlider = GetComponentInChildren<Slider>();
+        idleTimer = 0f;
+        _desiredVisibility = 0f;
     }
     
     void Update()
@@ -37,15 +39,17 @@ public class ObjectHealthBar : MonoBehaviour
             gameObject.transform.localScale = visibility * new Vector3(1, 1, 1);
             healthSlider.value = target.health / target.maxHealth;
         }
+        else
+        {
+            target = GetComponentInParent<Target>();
+            healthSlider = GetComponentInChildren<Slider>();
+        }
     }
 
     public void DisplayUI()
     {
         _desiredVisibility = 1f;
         idleTimer = 0f;
-    }
-    public void InteruptUI()
-    {
-        _desiredVisibility = 0f;
+        Debug.Log("DisplayUI");
     }
 }
