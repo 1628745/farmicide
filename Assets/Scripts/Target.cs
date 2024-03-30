@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 [System.Serializable]
 public class TargetDamageEvent : UnityEvent<float> {}
@@ -24,8 +25,10 @@ public class Target : MonoBehaviour
         if (gameObject.CompareTag("Object"))
         {
             healthBarPrefab = GameObject.Find("HealthBar");
-            // instantiate the health bar
-            healthBar = Instantiate(healthBarPrefab, this.transform);
+            // instantiate the health bar at the location of the object
+            Vector3 newPosition = transform.position;
+            newPosition.y += 1.5f;
+            healthBar = Instantiate(healthBarPrefab, newPosition, Quaternion.identity, this.transform);
             healthBarScript = healthBar.GetComponent<ObjectHealthBar>();
         }
         maxHealth = health;
