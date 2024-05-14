@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private PlayerGFX _playerGFX;
     private GameManager _manager;
     public Target target;
-
+    // Ignore this comment
 
     void Awake()
     {
