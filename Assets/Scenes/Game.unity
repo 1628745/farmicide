@@ -3774,11 +3774,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1818672612110893920, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
       propertyPath: color.g
-      value: 0.5094871
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1818672612110893920, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
       propertyPath: color.r
-      value: 1
+      value: 0.2003901
       objectReference: {fileID: 0}
     - target: {fileID: 1818672612110893920, guid: f192407b505e2f343b13c1173dcb3cf7, type: 3}
       propertyPath: UIPopUpBuffer
@@ -4055,7 +4055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4650604950607391299, guid: 227ae12148577c04ca85facf40113d1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.91
+      value: -13.9
       objectReference: {fileID: 0}
     - target: {fileID: 4650604950607391299, guid: 227ae12148577c04ca85facf40113d1b, type: 3}
       propertyPath: m_LocalPosition.y
